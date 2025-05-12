@@ -1,13 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-    
 
-    <script src="/main.js"></script>
+<body>
+    <div>
+        <h2> Quản Lý Tuyển Sinh</h2>
+
+        <label>Điểm chuẩn hội đồng:</label>
+        <input type="number" id="diemChuan" />
+
+        <label>Điểm môn thứ 1:</label>
+        <input type="number" id="diem1" />
+
+        <label>Điểm môn thứ 2:</label>
+        <input type="number" id="diem2" />
+
+        <label>Điểm môn thứ 3:</label>
+        <input type="number" id="diem3" />
+
+        <label>Khu vực:</label>
+    </div>
+    <select id="khuVuc">
+        <option value="X">Không ưu tiên</option>
+        <option value="A">A (2 điểm)</option>
+        <option value="B">B (1 điểm)</option>
+        <option value="C">C (0.5 điểm)</option>
+    </select>
+
+    <label>Đối tượng:</label>
+    <select id="doiTuong">
+        <option value="0">Không ưu tiên</option>
+        <option value="1">Đối tượng 1 (2.5 điểm)</option>
+        <option value="2">Đối tượng 2 (1.5 điểm)</option>
+        <option value="3">Đối tượng 3 (1 điểm)</option>
+    </select>
+
+    <button onclick="tinhKetQua()"> Kiểm tra kết quả</button>
+
+    <div id="output" class="result" style="display: none;"></div>
+
+    <hr />
+
+    <h2> Tính Tiền Điện</h2>
+
+    <label>Tên người dùng:</label>
+    <input type="text" id="tenNguoiDung">
+
+    <label>Số điện tiêu thụ (Kw):</label>
+    <input type="number" id="soKw">
+
+    <button onclick="tinhTienDien()"> Tính tiền điện</button>
+
+    <div id="output" class="result" style="display: none;"></div>
+
+    <hr>
+
+    <div class="container">
+        <h1>Tính Tiền Cáp</h1>
+        <form id="billingForm">
+            <label for="customerId">Mã khách hàng:</label>
+            <input type="text" id="customerId" required>
+
+            <label for="customerType">Loại khách hàng:</label>
+            <select id="customerType" required>
+                <option value="residential">Nhà dân</option>
+                <option value="business">Doanh nghiệp</option>
+            </select>
+
+            <div id="connectionDiv">
+                <label for="connections">Số kết nối:</label>
+                <input type="number" id="connections" min="1" value="1">
+            </div>
+
+            <label for="premiumChannels">Số kênh cao cấp:</label>
+            <input type="number" id="premiumChannels" min="0" value="0">
+
+            <button type="submit">Tính hóa đơn</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+    <hr>
+    <div>
+        <h1>Tính Thuế Thu Nhập Cá Nhân</h1>
+        <form id="taxForm">
+            <label for="name">Họ tên:</label>
+            <input type="text" id="name" required><br>
+
+            <label for="income">Tổng thu nhập năm (triệu):</label>
+            <input type="number" id="income" required><br>
+
+            <label for="dependents">Số người phụ thuộc:</label>
+            <input type="number" id="dependents" required><br>
+
+            <button type="submit">Tính thuế</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+    <script src="/manu.js/tienthue.js"></script>
+    <script src="/manu.js/tiencap.js"></script>
+    <script src="/manu.js/main.js"></script>
 </body>
+
 </html>
